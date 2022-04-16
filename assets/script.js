@@ -3,13 +3,13 @@ var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 
- searchButton.addEventListener('click', function () {
-//     trims spaces for cities with spaces to avoid breaking api url
-     const searchTerm = city.value.trim();
-    //{function that runs API Call}(searchTerm);
-     console.log(searchTerm);
-     history();
- });
+searchButton.addEventListener('click', function () {
+    const searchTerm = enterMovie.value.trim();
+    //ApiCallFunction(searchTerm);
+    console.log(searchTerm);
+    history();
+    document.getElementById("date").innerHTML = Date();
+});
 
 /*makes enter button trigger search button click*/
 document.getElementById("enter-city")
@@ -24,13 +24,20 @@ function history() {
     const searchTerm = enterMovie.value;
     searchHistory.push(searchTerm);
     localStorage.setItem("search", JSON.stringify(searchHistory));
-    savedData.textContent = (enterMovie.value);
-    console.log(savedData.textContent);
     localStorage.setItem("history", JSON.stringify(savedData.textContent));
+    renderHistory();
 };
 
-/*reloads function when clicking city name in history */
-savedData.addEventListener("click", function() {
-    searchTerm = enterMovie.value;
-    //{function that runs API Call}(searchTerm)
-}); 
+//fixed to display all history items
+function renderHistory() {
+    savedData.innerHTML = "";
+    for (let i = 0; i < searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        historyItem.setAttribute("type", "text");
+        historyItem.setAttribute("value", searchHistory[i]);
+        historyItem.addEventListener("click", function() {
+            weatherData(historyItem.value);
+        })
+        savedData.append(historyItem);
+    }
+}
