@@ -1,18 +1,22 @@
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
+searchButton = document.getElementById("search-button");
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
+
+function ApiCallFunction() {
+    console.log(enterMovie.value);
+};
 
 searchButton.addEventListener('click', function () {
     const searchTerm = enterMovie.value.trim();
-    //ApiCallFunction(searchTerm);
+    ApiCallFunction(searchTerm);
     console.log(searchTerm);
     history();
-    document.getElementById("date").innerHTML = Date();
 });
 
 /*makes enter button trigger search button click*/
-document.getElementById("enter-city")
+document.getElementById("enter-movie")
     .addEventListener("keyup", function(e) {
         if (e.keyCode === 13) {
             document.getElementById("search-button").click();
@@ -36,7 +40,7 @@ function renderHistory() {
         historyItem.setAttribute("type", "text");
         historyItem.setAttribute("value", searchHistory[i]);
         historyItem.addEventListener("click", function() {
-            weatherData(historyItem.value);
+            ApiCallFunction(historyItem.value);
         })
         savedData.append(historyItem);
     }
