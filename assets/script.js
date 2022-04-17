@@ -3,6 +3,7 @@ var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
 searchButton = document.getElementById("search-button");
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
+poster = document.getElementById("poster");
 
 function ApiCallFunction() {
     console.log(enterMovie.value);
@@ -13,6 +14,7 @@ searchButton.addEventListener('click', function () {
     ApiCallFunction(searchTerm);
     console.log(searchTerm);
     history();
+    getPoster();
 });
 
 /*makes enter button trigger search button click*/
@@ -45,3 +47,19 @@ function renderHistory() {
         savedData.append(historyItem);
     }
 }
+
+//console.log($.getJSON("https://api.themoviedb.org/3/discover/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb"));
+
+function getPoster(posterImage) {
+    let api = "https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + posterImage + "&callback=?";
+    fetch(api).then((res) => {
+
+        res.json().then((data) => {
+    
+            console.log(data);
+            poster.src = "http://image.tmdb.org/t/p/w500/" + data.json.results[0].poster_path + ".jpg";
+            console.log(poster.src);
+        })
+    })
+};
+
