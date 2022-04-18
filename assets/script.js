@@ -48,18 +48,11 @@ function renderHistory() {
     }
 }
 
-//console.log($.getJSON("https://api.themoviedb.org/3/discover/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb"));
+ var getPoster = function(){
 
-function getPoster(posterImage) {
-    let api = "https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + posterImage + "&callback=?";
-    fetch(api).then((res) => {
+      var film = $('#enter-movie').val();
 
-        res.json().then((data) => {
-    
-            console.log(data);
-            poster.src = "http://image.tmdb.org/t/p/w500/" + data.json.results[0].poster_path + ".jpg";
-            console.log(poster.src);
-        })
-    })
-};
-
+          $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function(json) {
+            console.log(json);
+                   poster.src = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
+ })};
