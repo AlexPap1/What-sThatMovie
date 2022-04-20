@@ -11,7 +11,7 @@ const overview = document.getElementById("overview");
 
 //call omdb api, adds title and year
 function ApiCallFunction(str) {
-    let api = "http://www.omdbapi.com/?apikey=15c93984&s=" + str;
+    let api = "https://www.omdbapi.com/?apikey=15c93984&s=" + str;
     console.log(api);
     fetch(api).then((res) => {
 
