@@ -57,6 +57,7 @@ function renderHistory() {
         historyItem.setAttribute("value", searchHistory[i]);
         historyItem.addEventListener("click", function() {
             getPoster(historyItem.value);
+            ApiCallFunction(historyItem.value);
         })
         savedData.append(historyItem);
     }
