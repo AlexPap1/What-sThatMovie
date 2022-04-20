@@ -1,3 +1,4 @@
+//global
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
@@ -8,6 +9,7 @@ const movieName = document.getElementById("name");
 const year = document.getElementById("year");
 const overview = document.getElementById("overview");
 
+//call omdb api, adds title and year
 function ApiCallFunction(str) {
     let api = "http://www.omdbapi.com/?apikey=15c93984&s=" + str;
     console.log(api);
@@ -21,11 +23,13 @@ function ApiCallFunction(str) {
     })
 };
 
+//search button event listener. runs api functions on click of search button using input text as base
 searchButton.addEventListener('click', function () {
     const searchTerm = enterMovie.value.trim();
     console.log(searchTerm);
     history();
     getPoster(searchTerm);
+    //removes spaces from movies with more than 1 word, to keep API url from breaking
     let str = enterMovie.value.replace(" ", '%20');
     console.log(str);
     ApiCallFunction(str);
@@ -56,6 +60,7 @@ function renderHistory() {
         historyItem.setAttribute("type", "text");
         historyItem.setAttribute("value", searchHistory[i]);
         historyItem.addEventListener("click", function() {
+            //reruns both API Calls with history value as the input instead of the text input
             getPoster(historyItem.value);
             ApiCallFunction(historyItem.value);
         })
@@ -63,6 +68,7 @@ function renderHistory() {
     }
 }
 
+//second api (poster) grabs oster image and breif summary
  function getPoster(film){
 
           $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function(json) {
