@@ -4,17 +4,31 @@ enterMovie = document.getElementById("enter-movie");
 searchButton = document.getElementById("search-button");
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 poster = document.getElementById("poster");
+const movieName = document.getElementById("name");
+const year = document.getElementById("year");
+const overview = document.getElementById("overview");
 
-function ApiCallFunction() {
-    console.log(enterMovie.value);
+function ApiCallFunction(str) {
+    let api = "http://www.omdbapi.com/?apikey=15c93984&s=" + str;
+    console.log(api);
+    fetch(api).then((res) => {
+
+        res.json().then((data) => {
+            console.log(data);
+            movieName.innerHTML = "Title: " + data.Search[0].Title;
+            year.innerHTML = "Year: " + data.Search[0].Year;
+        })
+    })
 };
 
 searchButton.addEventListener('click', function () {
     const searchTerm = enterMovie.value.trim();
-    ApiCallFunction(searchTerm);
     console.log(searchTerm);
     history();
-    getPoster();
+    getPoster(searchTerm);
+    let str = enterMovie.value.replace(" ", '%20');
+    console.log(str);
+    ApiCallFunction(str);
 });
 
 /*makes enter button trigger search button click*/
@@ -42,17 +56,16 @@ function renderHistory() {
         historyItem.setAttribute("type", "text");
         historyItem.setAttribute("value", searchHistory[i]);
         historyItem.addEventListener("click", function() {
-            ApiCallFunction(historyItem.value);
+            getPoster(historyItem.value);
         })
         savedData.append(historyItem);
     }
 }
 
- var getPoster = function(){
-
-      var film = $('#enter-movie').val();
+ function getPoster(film){
 
           $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function(json) {
             console.log(json);
                    poster.src = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
+                   overview.innerHTML = json.results[0].overview;
  })};
