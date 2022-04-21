@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Header-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,17 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="./assets/style.css" rel="stylesheet">
-    <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script defer src="https://kit.fontawesome.com/94a9fd42dd.js" crossorigin="anonymous"></script>
     <script defer src="./assets/script.js"></script>
     <title>What's That Movie?</title>
 </head>
 
+<!--body-->
 <body>
+    <!--title card-->
     <header>
-        <h1 class="card-panel purple darken-4 white-text center-align">What's That Movie</h1>
+        <h1 class="card-panel purple darken-4 white-text center-align">What's That Movie?</h1>
     </header>
    <div class="flex-container">
         <aside class="row flex-child-left">
@@ -28,16 +31,27 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
-                <div class="history-container">
+                <!--history container-->
+                <div class="history-container col 4">
                 <h2>History</h2>
                 <form id="savedData"></form>
                 </div>
             </div>
-            <div class="col l7 results-container" id="results-container">
-                <div class="row center-align">
-                    <div class="col 2">
-                    <img id="poster" class="center-align">
-                    </div>            
+            <!--results container-->
+            <div class="col l9 s8 results-container" id="results-container">
+                    <!--poster-->
+                    <div class="s8 center-align">
+                        <img id="poster" class="left-align ">
+                    </div>
+                    <!--Title and Year-->
+                    <div class="center-align">
+                        <h2 id = "name"></h2>
+                        <h2 id = "year"></h2>
+                    <!--Breif Sumamry-->
+                    <div class="poster-info col 1 center-align">
+                        <h5 id = "overview"></h5>                
+                    </div>
+                    </div>
                 </div>
             </div>   
         </aside>
@@ -72,7 +86,7 @@
    
 </body>
     <footer class="section">
-        <h3 class="card-panel purple darken-4 center-align white-text">Thank you! 🤝</h3>
+        <h3 class="card-panel purple darken-4 center-align white-text">Enjoy your movie! 🎬</h3>
     </footer>
 
 
