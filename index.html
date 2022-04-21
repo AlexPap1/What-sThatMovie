@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Header-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="./assets/style.css" rel="stylesheet">
-
-    <title>What's That Movie</title>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script defer src="https://kit.fontawesome.com/94a9fd42dd.js" crossorigin="anonymous"></script>
+    <script defer src="./assets/script.js"></script>
+    <title>What's That Movie?</title>
 </head>
 
+<!--body-->
 <body>
+    <!--title card-->
     <header>
-        <h1 class="bg-danger text-white text-center py-5">What's That Movie</h1>
+        <h1 class="card-panel purple darken-4 white-text center-align">What's That Movie?</h1>
     </header>
-    <div class="container-fluid">
+    <div>
         <div class="row">
-            <div class="col-lg-3 search-container ml-4 pb-2 border-bottom border-dark">
-                <h2 class="font-weight-bold">Search for a Movie:</h2>
+            <!--search container-->
+            <div class="col l3 search-container">
+                <h2 class="font-weight-bold center-align">Search for a Movie:</h2>
                 <div class="search-area">
-                    <input id="enter-movie" placeholder="The Godfather" size="30">
-                        <button class="btn btn-primary btn-sm" type="button" id="search-button">
+                    <input id="enter-movie" placeholder="The Godfather" size="30" class="validate">
+                        <button class="btn" type="button" id="search-button">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                 </div>
+                <!--history container-->
+                <div class="history-container col 4">
+                <h2>History</h2>
+                <form id="savedData"></form>
+                </div>
             </div>
-            <div class="col-lg-8 results-container">
-                <div class="row text-center">
-                    <div class="movie-five col-2">
-                        <p>Search Result</p>                
+            <!--results container-->
+            <div class="col l9 s8 results-container" id="results-container">
+                    <!--poster-->
+                    <div class="s8 center-align">
+                        <img id="poster" class="left-align ">
+                    </div>
+                    <!--Title and Year-->
+                    <div class="center-align">
+                        <h2 id = "name"></h2>
+                        <h2 id = "year"></h2>
+                    <!--Breif Sumamry-->
+                    <div class="poster-info col 1 center-align">
+                        <h5 id = "overview"></h5>                
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-<script defer src="https://kit.fontawesome.com/94a9fd42dd.js" crossorigin="anonymous"></script>
-<script defer src="./assets/script.js"></script>
-
+    <!--footer-->
+    <footer class="section">
+        <h3 class="card-panel purple darken-4 center-align white-text">Enjoy your movie! 🎬</h3>
+    </footer>
 </body>
+
 </html>
