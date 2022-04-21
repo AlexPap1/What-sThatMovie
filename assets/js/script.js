@@ -2,7 +2,9 @@
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
-searchButton = document.getElementById("search-button");
+searchButton = document.getElementById("search-button"); 
+movieContainer = document.getElementById("movie-container");
+
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 poster = document.getElementById("poster");
 const movieName = document.getElementById("name");
