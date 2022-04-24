@@ -37,6 +37,13 @@ searchButton.addEventListener('click', function () {
     ApiCallFunction(str);
 });
 
+$("#search-button").click(function () {
+    $(".flex-child-right").addClass("disappear");
+    $(".flex-child-left").addClass(".flex-container");
+    $(".search-container").addClass(".row new-child-left");
+    $(".results-container").addClass(".row new-child-right");
+})
+
 /*makes enter button trigger search button click*/
 document.getElementById("enter-movie")
     .addEventListener("keyup", function(e) {
