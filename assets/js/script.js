@@ -2,8 +2,7 @@
 let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
-searchButton = document.getElementById("search-button"); 
-
+searchButton = document.getElementById("search-button");
 
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 poster = document.getElementById("poster");
@@ -36,25 +35,15 @@ searchButton.addEventListener('click', function () {
     console.log(str);
     ApiCallFunction(str);
 });
-// clears the content on the page to display only the results
-var resultsPage = function () {
-        $("main").addClass("disappear");
-        $("aside").addClass(".flex-container");
-        $(".search-container").addClass(".row new-child-left");
-    $("#results-container").addClass(".row new-child-right");
-    $("#poster")
-}
 
-$("#search-button").click(function () {
-    resultsPage();
-});
 /*makes enter button trigger search button click*/
 document.getElementById("enter-movie")
     .addEventListener("keyup", function(e) {
         if (e.keyCode === 13) {
-            document.getElementById("search-button").click(resultsPage);
+            document.getElementById("search-button").click();
         }
     });
+
 
 /*save input in local storage and display under search history*/
 function history() {
@@ -81,11 +70,25 @@ function renderHistory() {
     }
 }
 
-//second api (poster) grabs poster image and breif summary
+//second api (poster) grabs oster image and breif summary
  function getPoster(film){
 
           $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + film + "&callback=?", function(json) {
             console.log(json);
                    poster.src = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
                    overview.innerHTML = json.results[0].overview;
- })};
+          })
+};
+
+ // clears the content on the page to display only the results
+var resultsPage = function () {
+    $("main").addClass("disappear");
+    $("aside").addClass(".flex-container");
+    $(".search-container").addClass(".row new-child-left");
+    $("#results-container").addClass(".row new-child-right");
+
+};
+
+$("#search-button").click(function () {
+resultsPage();
+});

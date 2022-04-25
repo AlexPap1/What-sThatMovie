@@ -9,7 +9,9 @@ body {
     font-size: 1em;
     line-height: 1;
  }
-
+header{
+    position: sticky;
+}
 h1,footer{
     font-family: 'Handlee', cursive;
 }
