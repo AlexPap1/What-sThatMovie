@@ -4,29 +4,32 @@
     box-sizing: border-box;
 }
 
-h3 {
-    margin-top:0;
-}
-
-#poster {
-    max-width: 100%;
- }
-
 body {
     font-family: 'Helvetica, Arial, sans-serif';
     font-size: 1em;
     line-height: 1;
  }
 
+h1,footer{
+    font-family: 'Handlee', cursive;
+}
 
- .search-area{
-    width: 100%;
-    margin-right: 0px;
+h2{
+    font-family: 'Indie Flower', cursive;
+}
+
+h3 {
+    margin-top:0;
 }
 
 .flex-container{
     display: flex;
     flex-direction: row;
+}
+
+.search-area{
+    width: 100%;
+    margin-right: 0px;
 }
 .flex-child-left {
     display: flex;
@@ -41,6 +44,10 @@ body {
     flex: 75%;
     margin:0 px;
 }
+
+#poster {
+    max-width: 100%;
+ }
 .row {
     display:flex;
     margin-bottom: 0px;
@@ -84,6 +91,7 @@ footer div {
 .new-child-right{
     flex:75%
 }
+
 
 @media screen and (max-width: 980px){
     
