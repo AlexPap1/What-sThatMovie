@@ -6,60 +6,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="./assets/style.css" rel="stylesheet">
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script defer src="https://kit.fontawesome.com/94a9fd42dd.js" crossorigin="anonymous"></script>
-    <script defer src="./assets/script.js"></script>
+    <script defer src="./assets/js/script.js"></script>
     <title>What's That Movie?</title>
 </head>
-
 <!--body-->
 <body>
     <!--title card-->
     <header>
         <h1 class="card-panel purple darken-4 white-text center-align">What's That Movie?</h1>
     </header>
-    <div>
-        <div class="row">
-            <!--search container-->
-            <div class="col l3 search-container">
-                <h2 class="font-weight-bold center-align">Search for a Movie:</h2>
-                <div class="search-area">
-                    <input id="enter-movie" placeholder="The Godfather" size="30" class="validate">
-                        <button class="btn" type="button" id="search-button">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
+   <div class="flex-container">
+        <aside class="row flex-child-left">
+            <div class="col search-container">
+                <div class="col search-area">
+                <input id="enter-movie" placeholder="Enter Movie Name" size="30" class="validate">
+                    <button class="btn" type="button" id="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
                 <!--history container-->
                 <div class="history-container col 4">
                 <h2>History</h2>
-                <form id="savedData"></form>
+                <div class="scroll"><form id="savedData"></form></div>
                 </div>
             </div>
             <!--results container-->
-            <div class="col l9 s8 results-container" id="results-container">
+            <div class="results-container" id="results-container">
                     <!--poster-->
                     <div class="s8 center-align">
-                        <img id="poster" class="left-align ">
+                        <img id="poster" class="left-align">
                     </div>
                     <!--Title and Year-->
                     <div class="center-align">
                         <h2 id = "name"></h2>
                         <h2 id = "year"></h2>
+                    </div>
                     <!--Breif Sumamry-->
                     <div class="poster-info col 1 center-align">
                         <h5 id = "overview"></h5>                
                     </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
-    <!--footer-->
+        </aside>
+        <main class="flex-child-right">
+            <div class="row-title">
+                <h3>In Theaters</h3>
+            </div>
+            <section class="row spacing">
+                <div class="column"><img src="./assets/images/the-bad-guys-share-image-v2.jpg" alt="Bad Guys movie poster" style="width:100%"/></div>
+                <div class="column"><img src="./assets/images/the-lost-city2.jpg" alt="Lost City movie poster" style="width:100%"></div>
+                <div id = "last" class="column"><img src="./assets/images/still-believe.jpg" alt="Still Believe movie poster" style="width:100%"></div>
+            </section>
+            <div class="row-title">
+                <h3> Movies from the 2000s</h3>
+            </div>
+            <section class="row spacing">
+                <div class="column"><img src="./assets/images/the-help.jpg" alt="The Help movie poster" style="width:100%"></div>
+                <div class="column"><img src="./assets/images/find-nemo.jpg" alt="Finding Nemo movie poster" style="width:100%"></div>
+                <div id= "last" class="column"><img src="./assets/images/dr-do-little.jpg" alt="Dr.Dolittle movie poster" style="width:100%"></div>
+            </section>
+            <div class="row-title">
+                <h3>Movies from the 20th Century</h3>
+            </div>
+            <section class="row spacing">
+                <div class="column"><img src="./assets/images/home-alone.jpg" alt="Home Alone movie poster" style="width:100%"></div>
+                <div class="column"><img src="./assets/images/greek-wedding.jpg" alt="My Big Fat Greek Wedding movie poster" style="width:100%"></div>
+                <div id="last" class="column"><img src="./assets/images/coming-America.jpg" alt="Coming to America movie poster" style="width:100%"></div>
+            </section>
+        </main>
+    </div> 
+</body>
     <footer class="section">
         <h3 class="card-panel purple darken-4 center-align white-text">Enjoy your movie! 🎬</h3>
     </footer>
-</body>
-
 </html>

@@ -3,6 +3,7 @@ let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
 searchButton = document.getElementById("search-button");
+
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 poster = document.getElementById("poster");
 const movieName = document.getElementById("name");
@@ -43,6 +44,7 @@ document.getElementById("enter-movie")
         }
     });
 
+
 /*save input in local storage and display under search history*/
 function history() {
     const searchTerm = enterMovie.value;
@@ -75,4 +77,18 @@ function renderHistory() {
             console.log(json);
                    poster.src = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
                    overview.innerHTML = json.results[0].overview;
- })};
+          })
+};
+
+ // clears the content on the page to display only the results
+var resultsPage = function () {
+    $("main").addClass("disappear");
+    $("aside").addClass(".flex-container");
+    $(".search-container").addClass(".row new-child-left");
+    $("#results-container").addClass(".row new-child-right");
+
+};
+
+$("#search-button").click(function () {
+resultsPage();
+});
