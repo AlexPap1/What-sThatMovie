@@ -23,14 +23,9 @@ h3 {
     flex-direction: row;
 }
 
-.history-container {
-    height: 900px;
+.scroll{
+    height:600px;
     overflow:auto;
-}
-
-.history-container h2{
-    font-family: 'Indie Flower', cursive;
-    position: sticky;
 }
 .search-area{
     width: 100%;
