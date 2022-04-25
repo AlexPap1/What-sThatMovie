@@ -10,34 +10,32 @@ h3 {
 
 #poster {
     max-width: 100%;
-}
-#results-container {
-    justify-content: center;
-}
+ }
 
-#results-container {
-    justify-content: center;
-}
 body {
     font-family: 'Helvetica, Arial, sans-serif';
     font-size: 1em;
     line-height: 1;
  }
 
-.search-area{
+
+ .search-area{
     width: 100%;
     margin-right: 0px;
 }
+
 .flex-container{
     display: flex;
     flex-direction: row;
 }
 .flex-child-left {
+    display: flex;
     flex: 25%;
     margin-left: 0px;
     margin-right: 0px;
     padding-right: 0px;
     border-right:0px;
+    justify-content: flex-start;
 }
 .flex-child-right{
     flex: 75%;
@@ -86,4 +84,26 @@ footer div {
 .new-child-right{
     flex:75%
 }
+
+@media screen and (max-width: 980px){
+    
+    .flex-child-right {
+        flex: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    
+    #last{
+        display: none;
+      }
+}
+
+@media screen and (max-width: 575px){
+   
+    main img {
+        flex: 1 75%;
+    }
+}
+
 
