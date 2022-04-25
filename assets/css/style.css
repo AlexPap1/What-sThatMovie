@@ -14,10 +14,6 @@ h1,footer{
     font-family: 'Handlee', cursive;
 }
 
-h2{
-    font-family: 'Indie Flower', cursive;
-}
-
 h3 {
     margin-top:0;
 }
@@ -27,6 +23,15 @@ h3 {
     flex-direction: row;
 }
 
+.history-container {
+    height: 900px;
+    overflow:auto;
+}
+
+.history-container h2{
+    font-family: 'Indie Flower', cursive;
+    position: sticky;
+}
 .search-area{
     width: 100%;
     margin-right: 0px;
