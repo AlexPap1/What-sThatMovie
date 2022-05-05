@@ -12,6 +12,7 @@ const popularMovieOne = document.getElementById("popularOne");
 const popularMovieTwo = document.getElementById("popularTwo");
 const popularMovieThree = document.getElementById("popularThree");
 clearButton = document.getElementById("clear-button");
+const popularMovies = document.getElementById("popular-movies");
 
 //call omdb api, adds title and year
 function ApiCallFunction(str) {
@@ -37,6 +38,7 @@ searchButton.addEventListener('click', function () {
     let str = enterMovie.value.replace(" ", '%20');
     console.log(str);
     ApiCallFunction(str);
+    popularMovies.style.display="none";
 });
 
 function onDeleteAll() {
