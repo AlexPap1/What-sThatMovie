@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!--Header-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
 </head>
 
 <!--body-->
+
 <body>
     <!--title card-->
     <header>
@@ -26,43 +28,44 @@
             <div class="col l3 search-container">
                 <h2 class="font-weight-bold center-align">Search for a Movie:</h2>
                 <div class="search-area">
-                    <input id="enter-movie" placeholder="The Godfather" size="30" class="validate">
-                        <button class="btn" type="button" id="search-button">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
+                    <input id="enter-movie" placeholder="Movie Search" size="30" class="validate">
+                    <button class="btn" type="button" id="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
                 <!--history container-->
                 <div class="history-container col 4">
-                <h2>History</h2>
-                <form id="savedData"></form>
-<br>
-                <!-- <button id="clear-button">Clear</button> -->
+                    <h2>History</h2>
+                    <form id="savedData"></form>
+                    <br>
+                    <button id="clear-button">Clear History</button>
                 </div>
             </div>
             <!--results container-->
             <div class="col l9 s8 results-container" id="results-container">
-                    <!--poster-->
-                    <div class="s8 center-align">
-                        <img id="poster" class="left-align ">
-                    </div>
-                    <!--Title and Year-->
-                    <div class="center-align">
-                        <h2 id = "name"></h2>
-                        <h2 id = "year"></h2>
+                <!--poster-->
+                <div class="s8 center-align">
+                    <img id="poster" class="left-align ">
+                </div>
+                <!--Title and Year-->
+                <div class="center-align">
+                    <h2 id="name"></h2>
+                    <h2 id="year"></h2>
                     <!--Breif Sumamry-->
                     <div class="poster-info col 1 center-align">
-                        <h5 id = "overview"></h5>                
+                        <h5 id="overview"></h5>
                     </div>
-                    <div class="popular-movies-splash" id="popular-movies">
-                        <h4>Popular Movies Today:</h3>
+                    <div class="popular-movies-splash">
                         <img id="popularOne"></img>
                         <img id="popularTwo"></img>
                         <img id="popularThree"></img>
-                    </div>
+                        <img id="popularFour"></img>
+                        <img id="popularFive"></img>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!--footer-->
     <footer class="section">
