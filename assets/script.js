@@ -3,6 +3,7 @@ let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 var apiKeyOmdb = "15c93984";
 enterMovie = document.getElementById("enter-movie");
 searchButton = document.getElementById("search-button");
+clearButton = document.getElementById("clear-button"); // Added //
 /* OMDb API: http://www.omdbapi.com/?apikey=15c93984&s={movie-title} */
 poster = document.getElementById("poster");
 const movieName = document.getElementById("name");
@@ -11,8 +12,9 @@ const overview = document.getElementById("overview");
 const popularMovieOne = document.getElementById("popularOne");
 const popularMovieTwo = document.getElementById("popularTwo");
 const popularMovieThree = document.getElementById("popularThree");
+const popularMovieFour = document.getElementById("popularFour");
+const popularMovieFive = document.getElementById("popularFive");
 clearButton = document.getElementById("clear-button");
-const popularMovies = document.getElementById("popular-movies");
 
 //call omdb api, adds title and year
 function ApiCallFunction(str) {
@@ -38,20 +40,17 @@ searchButton.addEventListener('click', function () {
     let str = enterMovie.value.replace(" ", '%20');
     console.log(str);
     ApiCallFunction(str);
-    popularMovies.style.display="none";
 });
 
-function onDeleteAll() {
-    console.log("Deleted all history");
-}
+clearButton.addEventListener("click", function () {
+    deleteAllHistory();
+});
 
 function deleteAllHistory() {
-    // let deletingAll = searchHistory.deleteAll();
-    deletingAll.then(onDeleteAll);
-}
-
-// deleteAllHistory();
-;
+    searchHistory = []
+    localStorage.setItem("search", JSON.stringify(searchHistory));
+    renderHistory();
+};
 
 /*makes enter button trigger search button click*/
 document.getElementById("enter-movie")
@@ -64,9 +63,12 @@ document.getElementById("enter-movie")
 /*save input in local storage and display under search history*/
 function history() {
     const searchTerm = enterMovie.value;
-    searchHistory.push(searchTerm);
+    if (searchHistory.length == 5) {
+        searchHistory.shift(); // Removes 1st(oldest) Element(line item) //
+    }
+    searchHistory.push(searchTerm); // Newest term will show at end of list //
     localStorage.setItem("search", JSON.stringify(searchHistory));
-    localStorage.setItem("history", JSON.stringify(savedData.textContent));
+    // localStorage.setItem("history", JSON.stringify(savedData.textContent));
     renderHistory();
 };
 
@@ -82,7 +84,7 @@ function renderHistory() {
             getPoster(historyItem.value);
             ApiCallFunction(historyItem.value);
         })
-        savedData.append(historyItem);
+        savedData.prepend(historyItem); // prepend vs append order //
     }
 }
 
@@ -111,10 +113,13 @@ function loadPopular() {
 
             const thirdPopular = "https://image.tmdb.org/t/p/w185/" + data.results[2].poster_path;
             popularMovieThree.src = thirdPopular;
+
+            const fourthPopular = "https://image.tmdb.org/t/p/w185/" + data.results[3].poster_path;
+            popularMovieFour.src = fourthPopular;
+
+            const fifthPopular = "https://image.tmdb.org/t/p/w185/" + data.results[4].poster_path;
+            popularMovieFive.src = fifthPopular;
         })
-        // console.log(response);
-        // response.data.results = "https://image.tmdb.org/t/p/w185/" + results.poster_path;
-        // popularMovies.innerHTML = results.poster_path;
 
     })
 }
