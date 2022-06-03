@@ -64,11 +64,10 @@ document.getElementById("enter-movie")
 function history() {
     const searchTerm = enterMovie.value;
     if (searchHistory.length == 5) {
-        searchHistory.shift(); // Removes 1st(oldest) Element(line item) //
+        searchHistory.shift(); // Removes oldest element (line item) //
     }
     searchHistory.push(searchTerm); // Newest term will show at end of list //
     localStorage.setItem("search", JSON.stringify(searchHistory));
-    // localStorage.setItem("history", JSON.stringify(savedData.textContent));
     renderHistory();
 };
 
@@ -84,7 +83,7 @@ function renderHistory() {
             getPoster(historyItem.value);
             ApiCallFunction(historyItem.value);
         })
-        savedData.prepend(historyItem); // prepend vs append order //
+        savedData.prepend(historyItem); // prepend (newest first) vs append (newest last) order //
     }
 }
 
