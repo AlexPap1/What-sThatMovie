@@ -39,7 +39,7 @@ We were able to succesfully call both API's at the same time and return similart
 
 Future Development
 ---------------------------------------------------------------------------------------------------------------
-In the future, we would liek to implement a way to find where users can watch the movies searched, such as through streaming services like Netlix and HBO Max. We would also like for a way to find the MPAA movie rating or genre, so the user has a better idea of the type of movie beign searched.
+In the future, we would like to implement a way to find where users can watch the movies searched, such as through streaming services like Netlix and HBO Max. We would also like for a way to find the MPAA movie rating or genre, so the user has a better idea of the type of movie beign searched.
 
 Links
 ---------------------------------------------------------------------------------------------------------------
