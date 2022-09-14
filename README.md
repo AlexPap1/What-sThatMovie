@@ -1,31 +1,29 @@
-# What's-That-Movie
+# What's-That-Movie  
 
-What's That Movie?
-===============================================================================================================
-This program will function to supply information on a variety of movies, including title, year, an image, and a breif sumamry, to its user base using info from multiple API's.
-<br />
+### Description
 
-![](assets/images/Screenshot%202022-04-20%20131046.png)
+This program will function to supply information on the latest movies to its user base using info from OMDB and Rotten Tomatos API's.  
 
-User Story / Motivation
-===============================================================================================================
-AS A movie watcher
-<br />
-I WANT TO get information on the current selections of movies
-<br />
-SO THAT I can learn more about a movie to ensure the movie I see would be something that interests me
+#
 
-Process
-===============================================================================================================
-Technologies Used
----------------------------------------------------------------------------------------------------------------
-We used Materialize as our main CSS framework, so as to avoid using Bootstrap.
-<br />
-We also connected jquery and a script for our search button icon.
-<br />
-Our API's are the following:
-* OMDB which was used for general information such as title and release year
-* Themoviedb which was used to grab the movie posters as well as the sumamry
+### User Story
+
+AS A movie watcher I WANT TO get information and reviews on the current selections of movies based on my interests SO THAT I can ensure the movie I see would be to my liking  
+
+#
+
+### Issues
+
+wireframe sketch  
+link API's  
+rotten tomatos  
+review  
+score  
+OMDB  
+year  
+IMDB link  
+Put them inside of a search menu of some kind  
+return values  
 
 Challenges
 ---------------------------------------------------------------------------------------------------------------
